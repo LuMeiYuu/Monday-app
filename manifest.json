@@ -1,0 +1,56 @@
+{
+  "name": "Sales Alert Notifier",
+  "features": [
+    {
+      "type": "integration",
+      "integration": {
+        "recipes": [
+          {
+            "name": "Alert me in Slack when a rep crosses a sales threshold",
+            "action": {
+              "url": "https://your-app.com/sales-alert",
+              "method": "POST"
+            },
+            "trigger": {
+              "platform": "custom",
+              "schedule": "weekly"
+            },
+            "inputFields": [
+              {
+                "label": "Board",
+                "id": "board_id",
+                "type": "board"
+              },
+              {
+                "label": "Sales Column ID",
+                "id": "sales_column_id",
+                "type": "text"
+              },
+              {
+                "label": "Agent Column ID",
+                "id": "agent_column_id",
+                "type": "text"
+              },
+              {
+                "label": "Date Column ID",
+                "id": "date_column_id",
+                "type": "text"
+              },
+              {
+                "label": "Sales Threshold",
+                "id": "sales_threshold",
+                "type": "number"
+              },
+              {
+                "label": "Slack Webhook URL",
+                "id": "slack_webhook",
+                "type": "text"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "oauth_scopes": ["boards:read"]
+}
